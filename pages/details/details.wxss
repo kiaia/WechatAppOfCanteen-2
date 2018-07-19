@@ -18,14 +18,13 @@ scroll-view {
 
 .base {
   z-index: -1;
+  background-color: #f4f5f9;
   width: 100%;
   height: 100%;
 }
 
 .introduction {
-  border-bottom-style: solid;
-  border-bottom-width: 10rpx;
-  border-bottom-color: #f4f5f9;
+  background-color: white;
 }
 
 .food {
@@ -35,6 +34,9 @@ scroll-view {
   justify-content: center;
   margin: auto;
   margin-bottom: 20rpx;
+  border-bottom-style: solid;
+  border-bottom-width: 10rpx;
+  border-bottom-color: #f4f5f9;
 }
 
 .price {
@@ -70,14 +72,18 @@ scroll-view {
 }
 
 .comment {
+  background-color: white;
   border-bottom-style: solid;
   border-bottom-width: 10rpx;
   border-bottom-color: #f4f5f9;
 }
 
 .commentTop {
-  margin-bottom: 20rpx;
-  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+  border-top-style: solid;
+  border-top-color: white;
+  border-top-width: 20rpx;
 }
 
 .commentSize {
@@ -92,6 +98,7 @@ scroll-view {
   font-size: 80%;
   color: #38a9eb;
   text-align: right;
+  margin-left: 600rpx;
   margin-right: 30rpx;
 }
 
@@ -161,7 +168,7 @@ scroll-view {
 .commentCell {
   padding-left: 20rpx;
   padding-top: 10rpx;
-  border-top-style:solid;
+  border-top-style: solid;
   border-top-width: 10rpx;
   border-top-color: #f4f5f9;
   border-bottom-style: solid;
@@ -169,24 +176,89 @@ scroll-view {
   border-bottom-color: #f4f5f9;
 }
 
-.recommendTitle {
-  text-align: center;
-}
-
 .latestComment {
   float: left;
   color: #38a9eb;
-  font-size:80%;
-  margin-left:40rpx;
+  font-size: 80%;
+  margin-left: 40rpx;
   margin-right: 20rpx;
-  margin-top:40rpx;
-  margin-bottom:20px;
+  margin-top: 40rpx;
+  margin-bottom: 20px;
 }
 
 .hottestComment {
   color: #38a9eb;
-  font-size:80%;
-  margin-left:120rpx;
-  margin-top:40rpx;
-  margin-bottom:20px;
+  font-size: 80%;
+  margin-left: 120rpx;
+  margin-top: 40rpx;
+  margin-bottom: 20px;
+}
+
+.nutitionList {
+  background-color: white;
+  border-top-style: solid;
+  border-top-width: 10rpx;
+  border-top-color: white;
+  border-bottom-style: solid;
+  border-bottom-width: 10rpx;
+  border-bottom-color: white;
+}
+
+.nutitionTitle {
+  font-size: 80%;
+  text-align: center;
+}
+
+.nutition {
+  font-size: 80%;
+  text-align: center;
+}
+
+.recommend {
+  border-top-color: #f4f5f9;
+  border-top-style: solid;
+  border-top-width: 10rpx;
+}
+.recommendTitle {
+  font-size: 80%;
+  text-align: center;
+  color: grey;
+}
+
+.listFood {
+  width: 360rpx;
+}
+
+.listFoodName {
+  font-size: 90%;
+  text-align: left;
+  margin-left: 20rpx;
+}
+
+.listFoodPrice {
+  font-size: 80%;
+  text-align: left;
+  margin-left: 20rpx;
+  float:left;
+}
+
+.listFoodSales {
+  font-size: 80%;
+  text-align: right;
+  margin-right: 10rpx;
+}
+
+.recommendListLeft {
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-left: 10rpx;
+  background-color: white;
+  float: left;
+}
+.recommendListRight {
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-right: 10rpx;
+  background-color: white;
+  float: right;
 }

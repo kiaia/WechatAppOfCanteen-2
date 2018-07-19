@@ -1,9 +1,9 @@
 <!-- /pages/details/details.wxml -->
 <scroll-view class='base' scroll-y='{{enableScrollY}}'>
-<!--顶部加入引索菜单 底部加入点菜-->
+<!--底部加入点菜-->
 <!--简介-->
   <view class='introduction'>
-    <image class='food' src='/images/盖饭.jpeg'></image>
+    <image class='food' src='/images/food_rice.jpeg'></image>
     <view class='price'>¥12.80</view>
     <view class='name'>盖饭</view>
     <view class='introBottom'>
@@ -18,6 +18,7 @@
     <view class='commentTop'>
       <view class='commentSize'>评价(1432)</view>
       <view class='allComment' bindtap='powerDrawer' data-statu='open'>全部评论</view>
+      <view></view>
     </view>
     <view class='userInfo'>
       <image src='/images/head.jpeg' class='userHead'></image>
@@ -48,8 +49,57 @@
     </view>
   </view>
 
+<!--营养列表-->
+  <view class='nutitionList'>
+    <view class='nutitionTitle'>营养详情</view>
+    <view class='nutition'>120.41大卡  4.58克蛋白质  9.25克碳水</view>
+  </view>
+
 <!--推荐-->
   <view class='recommend'>
-    <view class='recommendTitle'>推荐</view>
+    <view class='recommendTitle'>————  推荐  ————</view>
+    <view class='recommendList'>
+      <view class='recommendListLeft'>
+        <image class='listFood' src='/images/food_rice.jpeg' mode='widthFix'></image>
+        <view class='listFoodName'>盖饭</view>
+        <view class='listFoodPrice'>¥12.80</view>
+        <view class='listFoodSales'>周销2365笔</view>
+      </view>
+
+      <view class='recommendListRight'>
+        <image class='listFood' src='/images/food_rice.jpeg' mode='widthFix'></image>
+        <view class='listFoodName'>盖饭</view>
+        <view class='listFoodPrice'>¥12.80</view>
+        <view class='listFoodSales'>周销2365笔</view>
+      </view>
+
+      <view class='recommendListLeft'>
+        <image class='listFood' src='/images/food_rice.jpeg' mode='widthFix'></image>
+        <view class='listFoodName'>盖饭</view>
+        <view class='listFoodPrice'>¥12.80</view>
+        <view class='listFoodSales'>周销2365笔</view>
+      </view>
+
+      <view class='recommendListRight'>
+        <image class='listFood' src='/images/food_rice.jpeg' mode='widthFix'></image>
+        <view class='listFoodName'>盖饭</view>
+        <view class='listFoodPrice'>¥12.80</view>
+        <view class='listFoodSales'>周销2365笔</view>
+      </view>
+
+      <view class='recommendListLeft'>
+        <image class='listFood' src='/images/food_rice.jpeg' mode='widthFix'></image>
+        <view class='listFoodName'>盖饭</view>
+        <view class='listFoodPrice'>¥12.80</view>
+        <view class='listFoodSales'>周销2365笔</view>
+      </view>
+
+      <view class='recommendListRight'>
+        <image class='listFood' src='/images/food_rice.jpeg' mode='widthFix'></image>
+        <view class='listFoodName'>盖饭</view>
+        <view class='listFoodPrice'>¥12.80</view>
+        <view class='listFoodSales'>周销2365笔</view>
+      </view>
+    </view>
   </view>
 </scroll-view>

@@ -1,14 +1,39 @@
 /* /pages/details/details.js */
-/*关闭抽屉菜单时太快*/
 Page({
   data: {
     enableScrollY: true,
     showModalStatus: false
   },
+
+/*加载页面时请求服务器加载数据并更新页面*/
+  onShow: function () {
+
+  },
+
+/*隐藏y页面时将数据发回服务器*/
+  onHide: function () {
+
+  },
+
+  onUnload: function () {
+
+  },
+
+/*上拉刷新页面 下拉加载更多推荐菜单*/
+  onPullDownRefresh: function () {
+
+  },
+
+  onReachBottom: function () {
+
+  },
+
+/*抽屉动画 关闭时动画太快*/
   powerDrawer: function (e) {
     var currentStatu = e.currentTarget.dataset.statu;
     this.util(currentStatu)
   },
+
   util: function (currentStatu) {
     var animation = wx.createAnimation({
       duration: 600,
