@@ -1,0 +1,105 @@
+<!-- /pages/details/details.wxml -->
+<scroll-view class='base' scroll-y='{{enableScrollY}}'>
+<!--底部加入点菜-->
+<!--简介-->
+  <view class='introduction'>
+    <image class='food' src='/images/food_rice.jpeg'></image>
+    <view class='price'>¥12.80</view>
+    <view class='name'>盖饭</view>
+    <view class='introBottom'>
+      <view class='sales'>周销2365笔</view>
+      <view class='location'>食堂三楼南</view>
+<!--缺少评分的详情，即星星数量-->
+    </view>
+  </view>
+
+<!--评论-->
+  <view class='comment'>
+    <view class='commentTop'>
+      <view class='commentSize'>评价(1432)</view>
+      <view class='allComment' bindtap='powerDrawer' data-statu='open'>全部评论</view>
+      <view></view>
+    </view>
+    <view class='userInfo'>
+      <image src='/images/head.jpeg' class='userHead'></image>
+      <view class='userName'>Social man</view>
+    </view>
+    <view class='commentDate'>2018-4-1</view>
+<!--    
+    <image class='thumbUp' src='/images/Like.png'></image>
+-->
+    <view class='commentContent'>红红火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚</view>
+<!--缺少点赞-->
+  </view>
+
+<!--全部评论抽屉菜单-->
+  <view class='drawerScreen' bindtap='powerDrawer' data-statu='close' wx:if='{{showModalStatus}}'></view>
+  <view animation='{{animationData}}' class='drawerBox' wx:if='{{showModalStatus}}'>
+    <view class='latestComment'>最新</view>
+    <view class='hottestComment'>最热</view>
+    <view class='commentBox'>
+      <view class='commentCell'>
+        <view class='userInfo'>
+          <image src='/images/head.jpeg' class='userHead'></image>
+          <view class='userName'>Social man</view>
+        </view>
+        <view class='commentData'>2018-4-1</view>
+        <view class='commentContent'>红红火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚</view>
+      </view>
+    </view>
+  </view>
+
+<!--营养列表-->
+  <view class='nutitionList'>
+    <view class='nutitionTitle'>营养详情</view>
+    <view class='nutition'>120.41大卡  4.58克蛋白质  9.25克碳水</view>
+  </view>
+
+<!--推荐-->
+  <view class='recommend'>
+    <view class='recommendTitle'>————  推荐  ————</view>
+    <view class='recommendList'>
+      <view class='recommendListLeft'>
+        <image class='listFood' src='/images/food_rice.jpeg' mode='widthFix'></image>
+        <view class='listFoodName'>盖饭</view>
+        <view class='listFoodPrice'>¥12.80</view>
+        <view class='listFoodSales'>周销2365笔</view>
+      </view>
+
+      <view class='recommendListRight'>
+        <image class='listFood' src='/images/food_rice.jpeg' mode='widthFix'></image>
+        <view class='listFoodName'>盖饭</view>
+        <view class='listFoodPrice'>¥12.80</view>
+        <view class='listFoodSales'>周销2365笔</view>
+      </view>
+
+      <view class='recommendListLeft'>
+        <image class='listFood' src='/images/food_rice.jpeg' mode='widthFix'></image>
+        <view class='listFoodName'>盖饭</view>
+        <view class='listFoodPrice'>¥12.80</view>
+        <view class='listFoodSales'>周销2365笔</view>
+      </view>
+
+      <view class='recommendListRight'>
+        <image class='listFood' src='/images/food_rice.jpeg' mode='widthFix'></image>
+        <view class='listFoodName'>盖饭</view>
+        <view class='listFoodPrice'>¥12.80</view>
+        <view class='listFoodSales'>周销2365笔</view>
+      </view>
+
+      <view class='recommendListLeft'>
+        <image class='listFood' src='/images/food_rice.jpeg' mode='widthFix'></image>
+        <view class='listFoodName'>盖饭</view>
+        <view class='listFoodPrice'>¥12.80</view>
+        <view class='listFoodSales'>周销2365笔</view>
+      </view>
+
+      <view class='recommendListRight'>
+        <image class='listFood' src='/images/food_rice.jpeg' mode='widthFix'></image>
+        <view class='listFoodName'>盖饭</view>
+        <view class='listFoodPrice'>¥12.80</view>
+        <view class='listFoodSales'>周销2365笔</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
