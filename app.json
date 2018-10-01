@@ -5,7 +5,8 @@
     "pages/feedback/feedback",
     "pages/order/order",
     "pages/details/details",
-    "pages/healthy/healthy"
+    "pages/healthy/healthy",
+    "pages/data/data"
   ],
   "window": {
     "backgroundTextStyle": "light",
