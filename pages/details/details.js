@@ -5,6 +5,42 @@ Page({
     showModalStatus: false
   },
 
+  onLoad: function (options) {
+    var postData = require("/data/data.js");
+    var id = options.title;
+    var details = postData.getFoodById(id);
+    var comments = [
+      {
+        "id": 1.1,
+        "userInfo": {
+          "head": "/images/head.jpeg",
+          "userName": "SocialMan"
+        },
+        "comment": "红红火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚"
+      },
+      {
+        "id": 1.2,
+        "userInfo": {
+          "head": "/images/head.jpeg",
+          "userName": "SocialMan"
+        },
+        "comment": "test"
+      }
+    ];
+    var recommend_id = [1, 1, 1, 1, 1, 1];
+    var recommend = [];
+    for (var i = 0; i < recommend_id.length; ++i) {
+      recommend.push(postData.getFoodById(recommend_id[i]));
+    }
+
+    this.setData ({
+      id: id,
+      details: details,
+      comments: comments,
+      recommend: recommend
+    });
+  },
+
 /*加载页面时请求服务器加载数据并更新页面*/
   onShow: function () {
 
