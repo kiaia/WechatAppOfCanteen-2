@@ -118,6 +118,13 @@ Page({
       showCartDetail: false
     });
   },
+
+  navigateToOrder:function(){
+    wx.navigateTo({
+      url: "../order/order",
+    })
+  },
+
   submit: function (e) {
     for (var id in this.data.cart.list){
       //this.data.goods[id].sold += this.data.cart.list[id];
