@@ -1,30 +1,39 @@
 /* /pages/details/details.js */
 Page({
   data: {
+    id: 0,
+    details: null,
+    comments: [],
+    recommend: [],
     enableScrollY: true,
     showModalStatus: false
   },
 
   onLoad: function (options) {
-    var postData = require("/data/data.js");
-    var id = options.title;
+    var postData = require("../data/data.js");
+    // var id = options.title;
+    var id = 1;
+    console.log('sdfjlk');
     var details = postData.getFoodById(id);
+    console.log(details);
     var comments = [
       {
-        "id": 1.1,
-        "userInfo": {
-          "head": "/images/head.jpeg",
-          "userName": "SocialMan"
+        id: 1.1,
+        userInfo: {
+          head: "../../images/head.jpeg",
+          userName: "SocialMan"
         },
-        "comment": "红红火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚"
+        comment: "红红火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚",
+        date: [2018, 4, 1]
       },
       {
-        "id": 1.2,
-        "userInfo": {
-          "head": "/images/head.jpeg",
-          "userName": "SocialMan"
+        id: 1.2,
+        userInfo: {
+          head: "../../images/head.jpeg",
+          userName: "SocialMan"
         },
-        "comment": "test"
+        comment: "test",
+        date: [2018, 4, 2]
       }
     ];
     var recommend_id = [1, 1, 1, 1, 1, 1];
@@ -32,6 +41,7 @@ Page({
     for (var i = 0; i < recommend_id.length; ++i) {
       recommend.push(postData.getFoodById(recommend_id[i]));
     }
+    console.log(recommend);
 
     this.setData ({
       id: id,
