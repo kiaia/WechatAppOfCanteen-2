@@ -14,7 +14,7 @@
 					<view class="sold">月售{{goods[id].sold}}</view>
 					<view class="price">￥{{goods[id].price}}</view>
 					<view class="addCart" bindtap="tapAddCart" data-id="{{id}}">
-						<image src="/images/加.png"></image>
+						<image src="/images/plus.png"></image>
 					</view>
 				</view>
 			</view>
@@ -39,7 +39,7 @@
 	<view class="cart">
 		<view class="data" bindtap="showCartDetail">
 			<view class="icon">
-				<image src="/imgs/shop/cart.png"></image>
+				<image src="/images/cart.png"></image>
 				<view class="count">{{cart.count}}</view>
 			</view>
 			<view class="total">￥{{cart.total}}</view>

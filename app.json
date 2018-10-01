@@ -4,7 +4,8 @@
     "pages/users/users",
     "pages/feedback/feedback",
     "pages/order/order",
-    "pages/details/details"
+    "pages/details/details",
+    "pages/healthy/healthy"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,8 +25,8 @@
         "text": "首页"
       },
       {
-        "selectedIconPath": "pages/order/images/icon.png",
-        "iconPath": "pages/order/images/icon.png",
+        "selectedIconPath": "pages/order/images/order_blue.png",
+        "iconPath": "pages/order/images/order.png",
         "pagePath": "pages/order/order",
         "text": "订单"
       },
