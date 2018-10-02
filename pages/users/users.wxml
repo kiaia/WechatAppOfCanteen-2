@@ -7,41 +7,35 @@
     </block>
   </view>
 </view>
-<button type="default" size="default" class="first">
-<image class='card' src='/images/卡.png'></image>
-  <view class="schoolCard">
-  绑定校园卡
-  </view>
-</button>
 <view class="second">
   <button type="default" size="default" class="items1">
-  <image class='card' src='/images/信息.png'></image>
+  <image class='card' src='/images/message.png'></image>
   <view class="schoolCard">
   我的信息
   </view>
   </button>
   <button type="default" size="default" class="items1">
-    <image class='card' src='/images/收藏.png'></image>
+    <image class='card' src='/images/favorite.png'></image>
     <view class="schoolCard">
     我的收藏
     </view>
   </button>
 </view>
 <view class="third">
-  <button type="default" size="default" class="items2">
-    <image class='card' src='/images/生成简历.png'></image>
-    <view class="schoolCard">
-    生成简历
-    </view>
-  </button>
   <button type="default" size="default" class="items2" bindtap='jumpToFeedback'>
-  <image class='card' src='/images/意见反馈.png'></image>
+    <image class='card' src='/images/healthy.png'></image>
     <view class="schoolCard">
     健康管理
     </view>
   </button>
   <button type="default" size="default" class="items2">
-  <image class='card' src='/images/关于我们.png'></image>
+  <image class='card' src='/images/feedback.png'></image>
+    <view class="schoolCard">
+    意见反馈
+    </view>
+  </button>
+  <button type="default" size="default" class="items2">
+  <image class='card' src='/images/aboutus.png'></image>
     <view class="schoolCard">
     关于我们
     </view>

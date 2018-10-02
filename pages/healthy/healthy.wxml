@@ -1,0 +1,14 @@
+<view class="load" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></view>
+<view class="completeRate">
+  <text class="zhiShiLiuYi">健康情况\n</text>
+  <text class="boYaJinDu">{{userInfo.nickName+"的今日饮食\n"}}</text>
+  <view class="jinDuCircleBox">
+    <canvas class="jinDu" canvas-id='jinDu'></canvas>
+  </view>
+</view>
+<view class="classified">
+  <text>各项营养素</text>
+</view>
+<view class="classBox">
+    <canvas class="classf" canvas-id='classf'></canvas>
+</view>

@@ -1,8 +1,54 @@
 /* /pages/details/details.js */
 Page({
   data: {
+    id: 0,
+    details: null,
+    comments: [],
+    recommend: [],
     enableScrollY: true,
     showModalStatus: false
+  },
+
+  onLoad: function (options) {
+    var postData = require("../data/data.js");
+    // var id = options.title;
+    var id = 1;
+    console.log('sdfjlk');
+    var details = postData.getFoodById(id);
+    console.log(details);
+    var comments = [
+      {
+        id: 1.1,
+        userInfo: {
+          head: "../../images/head.jpeg",
+          userName: "SocialMan"
+        },
+        comment: "红红火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚",
+        date: [2018, 4, 1]
+      },
+      {
+        id: 1.2,
+        userInfo: {
+          head: "../../images/head.jpeg",
+          userName: "SocialMan"
+        },
+        comment: "test",
+        date: [2018, 4, 2]
+      }
+    ];
+    var recommend_id = [1, 1, 1, 1, 1, 1];
+    var recommend = [];
+    for (var i = 0; i < recommend_id.length; ++i) {
+      recommend.push(postData.getFoodById(recommend_id[i]));
+    }
+    console.log(recommend);
+
+    this.setData ({
+      id: id,
+      details: details,
+      comments: comments,
+      recommend: recommend
+    });
   },
 
 /*加载页面时请求服务器加载数据并更新页面*/

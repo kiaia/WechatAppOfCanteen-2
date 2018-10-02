@@ -44,7 +44,7 @@ Page({
   },//这里先暴力解决一下点按变色问题 回头再重构
   jumpToFeedback: function(e){
     wx.navigateTo({
-      url: '../feedback/feedback',
+      url: '../healthy/healthy',
     })
   },
   //
