@@ -1,4 +1,6 @@
 /* /pages/details/details.js */
+const app = getApp();
+
 Page({
   data: {
     id: 0,
@@ -13,9 +15,7 @@ Page({
     var postData = require("../data/data.js");
     // var id = options.title;
     var id = 1;
-    console.log('sdfjlk');
     var details = postData.getFoodById(id);
-    console.log(details);
     var comments = [
       {
         id: 1.1,

@@ -1,5 +1,5 @@
 const app = getApp()
-var postData = require('/data/recipedata.js');
+
 Page({
   data: {
     goods: {},
@@ -7,14 +7,20 @@ Page({
     cart: {},
     showCartDetail: false
   },
-  //事件处理函数
+
   onLoad: function (e) {
-    console.log(postData)
-    this.setData({//获取数据成功后的数据绑定
-      goodsList: postData.postList.goodsList,
-      goods: postData.postList.goods,
-      cart: postData.postList.cart
+    var postData = require("../data/data.js");
+
+    this.setData({
+      goods: postData.foodList,
+      goodsList: postData.foodClass,
+      cart: {
+        count: 0,
+        total: 0,
+        list: {}
+      }
     })
+
     var shopId = e.id;
     for (var i = 0; i < app.globalData.shops.length; i++) {
       if (app.globalData.shops[i].id == shopId) {
@@ -25,22 +31,27 @@ Page({
       }
     }
   },
+
   onShow: function () {
     this.setData({
       classifySeleted: this.data.goodsList[0].id
     });
   },
+
   tapAddCart: function (e) {
     this.addCart(e.target.dataset.id);
   },
+
   tapReduceCart: function (e) {
     this.reduceCart(e.target.dataset.id);
   },
+
   addCart: function (id) {
     var num = this.data.cart.list[id] || 0;
     this.data.cart.list[id] = num + 1;
     this.countCart();
   },
+
   reduceCart: function (id) {
     var num = this.data.cart.list[id] || 0;
     if (num <= 1) {
@@ -50,6 +61,7 @@ Page({
     }
     this.countCart();
   },
+
   countCart: function () {
     var count = 0,
       total = 0;
@@ -64,11 +76,13 @@ Page({
       cart: this.data.cart
     });
   },
+
   follow: function () {
     this.setData({
       followed: !this.data.followed
     });
   },
+
   onGoodsScroll: function (e) {
     if (e.detail.scrollTop > 10 && !this.data.scrollDown) {
       this.setData({
@@ -96,6 +110,7 @@ Page({
       classifySeleted: classifySeleted
     });
   },
+
   tapClassify: function (e) {
     var id = e.target.dataset.id;
     this.setData({
@@ -108,11 +123,13 @@ Page({
       });
     }, 100);
   },
+
   showCartDetail: function () {
     this.setData({
       showCartDetail: !this.data.showCartDetail
     });
   },
+  
   hideCartDetail: function () {
     this.setData({
       showCartDetail: false
