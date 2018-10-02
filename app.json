@@ -6,6 +6,7 @@
     "pages/order/order",
     "pages/details/details",
     "pages/healthy/healthy",
+    "pages/pay/pay",
     "pages/data/data"
   ],
   "window": {

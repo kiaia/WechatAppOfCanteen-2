@@ -124,6 +124,11 @@ Page({
       url: "../order/order",
     })
   },
+  navigateToPay: function (e) {
+    wx.navigateTo({
+      url: '../pay/pay',
+    })
+  },
 
   submit: function (e) {
     for (var id in this.data.cart.list){
