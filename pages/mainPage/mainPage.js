@@ -1,4 +1,4 @@
-const app = getApp()
+const app = getApp();
 
 Page({
   data: {
@@ -9,19 +9,20 @@ Page({
   },
 
   onLoad: function (e) {
-    var postData = require("../data/data.js");
+    /*var My_goods = app.globalData.foodList;
+    var My_goodsList = app.globalData.foodClass;*/
 
     this.setData({
-      goods: postData.foodList,
-      goodsList: postData.foodClass,
+      goods: app.globalData.foodList.data,
+      goodsList: app.globalData.foodClass,
       cart: {
         count: 0,
         total: 0,
         list: {}
       }
     })
-
-    var shopId = e.id;
+    
+    /*var shopId = e.id;
     for (var i = 0; i < app.globalData.shops.length; i++) {
       if (app.globalData.shops[i].id == shopId) {
         this.setData({
@@ -29,10 +30,12 @@ Page({
         });
         break;
       }
-    }
+    }*/
   },
 
-  onShow: function () {
+  onShow: function () {//默认热销
+    console.log(app.globalData.foodList);
+    console.log(app.globalData.foodClass);
     this.setData({
       classifySeleted: this.data.goodsList[0].id
     });
@@ -43,6 +46,7 @@ Page({
   },
 
   tapReduceCart: function (e) {
+    console.l
     this.reduceCart(e.target.dataset.id);
   },
 
@@ -156,8 +160,7 @@ Page({
         [str]: this.data.goods[id].sold + this.data.cart.list[id]
       });
     }
-    console.log("success!")
-    console.log(this.data.goods)
+
     /*server.sendTemplate(e.detail.formId, null, function (res) {
       if (res.data.errorcode == 0) {
         wx.showModal({

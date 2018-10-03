@@ -1,16 +1,4 @@
-/*
-wx.request({
-  url: 'https://974655065.scse1606.cn',
-  success: function() {
-    console.log("success");
-  },
-  fail: function() {
-    console.log("fail");
-  }
-});
-*/
-
-var foods = [
+/*var foods = [
   {
     id: 1,
     name: '西红柿鸡蛋盖饭',
@@ -182,52 +170,7 @@ var foods = [
     }
   }
 ];
-
-var foodClass = [
-  {
-    id: 'hot',
-    classifyName: '热销',
-    goods: [1, 2, 3, 4, 5]
-  },
-  {
-    id: 'new',
-    classifyName: '新品',
-    goods: [1, 3]
-  },
-  {
-    id: 'tsgf',
-    classifyName: '特色盖饭',
-    goods: [1, 3, 7, 8]
-  },
-  {
-    id: 'gggz',
-    classifyName: '干锅锅仔',
-    goods: [4, 5]
-  },
-  {
-    id: 'tbf',
-    classifyName: '铁板饭',
-    goods: [2, 6, 9]
-  },
-  {
-    id: 'favorite',
-    classifyName: '收藏',
-    goods: [2, 6, 9]
-  }
-];
-
-
-function getFoodById(id) {
-  if (id > 0 && id <= 9) {
-    return foods[id - 1];
-  } else {
-    console.log("Id out of range");
-  }
-}
-
-module.exports.foodList = foods;
-module.exports.foodClass = foodClass;
-module.exports.getFoodById = getFoodById;
+*/
 
 Page({
 
