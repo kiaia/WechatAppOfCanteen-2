@@ -57,6 +57,11 @@ Page({
       url: '../users/myFavorites/myFavorites',
     })
   },
+  jumpToFeedback:function(e){
+    wx.navigateTo({
+      url: '../users/Feedback/Feedback',
+    })
+  },
   //
   getUserInfo: function (e) {
     console.log(e)

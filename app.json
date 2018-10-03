@@ -9,7 +9,8 @@
     "pages/data/data",
     "pages/users/aboutUs/aboutUs",
     "pages/users/myFavorites/myFavorites",
-    "pages/users/healthy/healthy"
+    "pages/users/healthy/healthy",
+    "pages/users/Feedback/Feedback"
   ],
   "window": {
     "backgroundTextStyle": "light",

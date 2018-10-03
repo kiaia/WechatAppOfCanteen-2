@@ -28,7 +28,7 @@
     健康管理
     </view>
   </button>
-  <button type="default" size="default" class="items2">
+  <button type="default" size="default" class="items2" bindtap="jumpToFeedback">
   <image class='card' src='/images/feedback.png'></image>
     <view class="schoolCard">
     意见反馈
