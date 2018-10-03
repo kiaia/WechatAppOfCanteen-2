@@ -22,32 +22,32 @@ App({
       {
         id: 'hot',
         classifyName: '热销',
-        goods: [12345, 12346, 12347, 12348, 12349]
+        goods: [0, 1, 2, 3, 4, 5]
       },
       {
         id: 'new',
         classifyName: '新品',
-        goods: [12345, 12346]
+        goods: [0, 1, 2]
       },
       {
         id: 'tsgf',
         classifyName: '特色盖饭',
-        goods: [12345, 12346, 12347]
+        goods: [0, 1, 2, 3]
       },
       {
         id: 'gggz',
         classifyName: '干锅锅仔',
-        goods: [12345, 12346]
+        goods: [1, 2, 3, 4]
       },
       {
         id: 'tbf',
         classifyName: '铁板饭',
-        goods: [12345, 12346]
+        goods: [1, 4, 5]
       },
       {
         id: 'favorite',
         classifyName: '收藏',
-        goods: [12345]
+        goods: [0]
       }
     ]
   }
