@@ -14,7 +14,7 @@
   我的信息
   </view>
   </button>
-  <button type="default" size="default" class="items1">
+  <button type="default" size="default" class="items1" bindtap='jumpToMyFavorites'>
     <image class='card' src='/images/favorite.png'></image>
     <view class="schoolCard">
     我的收藏
@@ -22,7 +22,7 @@
   </button>
 </view>
 <view class="third">
-  <button type="default" size="default" class="items2" bindtap='jumpToFeedback'>
+  <button type="default" size="default" class="items2" bindtap='jumpToHealthy'>
     <image class='card' src='/images/healthy.png'></image>
     <view class="schoolCard">
     健康管理
@@ -34,7 +34,7 @@
     意见反馈
     </view>
   </button>
-  <button type="default" size="default" class="items2">
+  <button type="default" size="default" class="items2" bindtap='jumpToAboutUs'>
   <image class='card' src='/images/aboutus.png'></image>
     <view class="schoolCard">
     关于我们

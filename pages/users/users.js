@@ -42,9 +42,19 @@ Page({
       })
     }
   },//这里先暴力解决一下点按变色问题 回头再重构
-  jumpToFeedback: function(e){
+  jumpToHealthy: function(e){
     wx.navigateTo({
       url: '../users/healthy/healthy',
+    })
+  },
+  jumpToAboutUs:function(e){
+    wx.navigateTo({
+      url: '../users/aboutUs/aboutUs',
+    })
+  },
+  jumpToMyFavorites: function (e) {
+    wx.navigateTo({
+      url: '../users/myFavorites/myFavorites',
     })
   },
   //
