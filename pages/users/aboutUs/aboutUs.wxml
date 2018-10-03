@@ -1,2 +1,2 @@
-<!--pages/users/aboutUs/aboutUs.wxml-->
-<text>pages/users/aboutUs/aboutUs.wxml</text>
+<view class="title">关于我们只能说:</view>
+<view class='title'>田宏远牛逼!</view>
