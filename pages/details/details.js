@@ -12,10 +12,15 @@ Page({
   },
 
   onLoad: function (options) {
-    var postData = require("../data/data.js");
+    
     // var id = options.title;
     var id = 1;
-    var details = postData.getFoodById(id);
+
+    var foods = app.globalData.foodList;
+    console.log(foods);
+    var details = foods.data[id - 1];
+    console.log(details);
+
     var comments = [
       {
         id: 1.1,
@@ -39,9 +44,8 @@ Page({
     var recommend_id = [1, 1, 1, 1, 1, 1];
     var recommend = [];
     for (var i = 0; i < recommend_id.length; ++i) {
-      recommend.push(postData.getFoodById(recommend_id[i]));
+      recommend.push(foods[recommend_id[i]]);
     }
-    console.log(recommend);
 
     this.setData ({
       id: id,
