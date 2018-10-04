@@ -2,20 +2,37 @@
 App({
   onLaunch: function () {
     wx.request({
-      url: 'http://scse1606.cn',
+      url: 'http://scse1606.cn/',
+      method: 'GET',
       success: function (res) {
-        console.log("success");
+        console.log("get success");
         var app = getApp();
         app.globalData.foodList = res.data;
-        //app.globalData.isLoad = true;
       },
       fail: function () {
-        console.log("fail");
+        console.log("get fail");
+      }
+    });
+    wx.request({
+      url: 'http://scse1606.cn/',
+      data: {
+        'requestType': 'comment',
+        'recipeId': 114514
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 真机调试改为Content-type
+      },
+      success: function (res) {
+        console.log("post success");
+        console.log(res.data);
+      },
+      fail: function () {
+        console.log("post fail");
       }
     });
   },
   globalData: {
-    //isLoad: false,
     shops:[],
     foodList: [],
     foodClass: [
