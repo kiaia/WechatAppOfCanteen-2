@@ -57,6 +57,11 @@ Page({
       url: '../users/myFavorites/myFavorites',
     })
   },
+  jumpToMyInformation:function(e){
+    wx.navigateTo({
+      url: '../users/myInformation/myInformation',
+    })
+  },
   jumpToFeedback:function(e){
     wx.navigateTo({
       url: '../users/Feedback/Feedback',
