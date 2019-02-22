@@ -2,7 +2,7 @@ const app = getApp();
 
 Page({
   data: {
-    goods: {},
+    goods: [],
     goodsList: [],
     cart: {},
     showCartDetail: false
@@ -13,7 +13,7 @@ Page({
     var My_goodsList = app.globalData.foodClass;*/
 
     this.setData({
-      goods: app.globalData.foodList.data,
+      goods: app.globalData.foodList,//从服务器读到的存在foodList
       goodsList: app.globalData.foodClass,
       cart: {
         count: 0,
@@ -21,7 +21,6 @@ Page({
         list: {}
       }
     })
-    
     /*var shopId = e.id;
     for (var i = 0; i < app.globalData.shops.length; i++) {
       if (app.globalData.shops[i].id == shopId) {
@@ -34,8 +33,8 @@ Page({
   },
 
   onShow: function () {//默认热销
-    console.log(app.globalData.foodList);
-    console.log(app.globalData.foodClass);
+    console.log(this.data.goods);
+    console.log(this.data.goodsList);
     this.setData({
       classifySeleted: this.data.goodsList[0].id
     });

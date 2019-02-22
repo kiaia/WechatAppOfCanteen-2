@@ -55,7 +55,7 @@ Page({
       ctx.beginPath()
       ctx.arc(150, 100, 85, 3 / 2 * Math.PI, (-1 / 2 + score / 50) * Math.PI, 0)
       ctx.setLineWidth(5)
-      ctx.setStrokeStyle('#69D738')
+    ctx.setStrokeStyle('#87CEFA')
       //ctx.setStrokeStyle('#756ff7')
       ctx.stroke()
     // Draw arc
@@ -65,7 +65,7 @@ Page({
     ctx.arc(150, 100, 115, 11 / 6 * Math.PI, 1 / 6 * Math.PI)
     ctx.setLineWidth(5)
     ctx.setGlobalAlpha(0.5)
-    ctx.setStrokeStyle('#69D738')
+    ctx.setStrokeStyle('#87CEFA')
     //ctx.setStrokeStyle('#756ff7')
     ctx.stroke()
 
@@ -73,7 +73,7 @@ Page({
     ctx.arc(150, 100, 115, 5 / 6 * Math.PI, 7 / 6 * Math.PI)
     ctx.setLineWidth(5)
     ctx.setGlobalAlpha(0.5)
-    ctx.setStrokeStyle('#69D738')
+    ctx.setStrokeStyle('#87CEFA')
     //ctx.setStrokeStyle('#756ff7')
     ctx.stroke()
 
@@ -81,7 +81,7 @@ Page({
     ctx.arc(150, 100, 145, 23 / 12 * Math.PI, 1 / 12 * Math.PI)
     ctx.setLineWidth(5)
     ctx.setGlobalAlpha(0.2)
-    ctx.setStrokeStyle('#69D738')
+    ctx.setStrokeStyle('#87CEFA')
     //ctx.setStrokeStyle('#756ff7')
     ctx.stroke()
 
@@ -89,7 +89,7 @@ Page({
     ctx.arc(150, 100, 145, 11 / 12 * Math.PI, 13 / 12 * Math.PI)
     ctx.setLineWidth(5)
     ctx.setGlobalAlpha(0.2)
-    ctx.setStrokeStyle('#69D738');
+    ctx.setStrokeStyle('#87CEFA');
     //ctx.setStrokeStyle('#756ff7')
     ctx.stroke()
 
@@ -149,7 +149,7 @@ Page({
     var classPerfrom = 0.04 * width;
     var classPerto = 0.96 * width;
     height = 15;
-    ctx2.setStrokeStyle('#69D738');
+    ctx2.setStrokeStyle('#87CEFA');
     //ctx2.setStrokeStyle('#756ff7');
     ctx2.setLineWidth(4);
     for(var i=0;i<8;i++){

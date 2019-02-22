@@ -8,7 +8,7 @@
   </view>
 </view>
 <view class="second">
-  <button type="default" size="default" class="items1" bindtap='jumpToMyInformation'>
+  <button type="default" size="default" class="items1">
   <image class='card' src='/images/message.png'></image>
   <view class="schoolCard">
   我的信息

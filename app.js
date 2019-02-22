@@ -2,37 +2,21 @@
 App({
   onLaunch: function () {
     wx.request({
-      url: 'http://scse1606.cn/',
-      method: 'GET',
+      url: 'http://canteen.beihangsoft.cn',
       success: function (res) {
-        console.log("get success");
+        console.log("success");
         var app = getApp();
         app.globalData.foodList = res.data;
+        console.log(app.globalData.foodList)
+        //app.globalData.isLoad = true;
       },
       fail: function () {
-        console.log("get fail");
-      }
-    });
-    wx.request({
-      url: 'http://scse1606.cn/',
-      data: {
-        'requestType': 'comment',
-        'recipeId': 114514
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded' // 真机调试改为Content-type
-      },
-      success: function (res) {
-        console.log("post success");
-        console.log(res.data);
-      },
-      fail: function () {
-        console.log("post fail");
+        console.log("fail");
       }
     });
   },
   globalData: {
+    //isLoad: false,
     shops:[],
     foodList: [],
     foodClass: [
