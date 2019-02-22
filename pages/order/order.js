@@ -1,7 +1,7 @@
 Page({
   data: {
     toView: 'list1',
-    scrollTop: 100,
+    scrollTop: 0,
     maginleft: '10%',
     src: "/images/446105925964471455.jpg",
     state: "未完成",

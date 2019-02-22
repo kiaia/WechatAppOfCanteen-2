@@ -18,7 +18,7 @@ Page({
 
     var foods = app.globalData.foodList;
     console.log(foods);
-    var details = foods.data[id - 1];
+    var details = foods[id - 1];
     console.log(details);
 
     var comments = [

@@ -37,7 +37,7 @@
   <view animation='{{animationData}}' class='drawerBox' wx:if='{{showModalStatus}}'>
     <view class='latestComment'>最新</view>
     <view class='hottestComment'>最热</view>
-    <view class='commentBox' wx:for='{{comments}}'>
+    <view class='commentBox' wx:key='{{comments}}'>
       <view class='commentCell'>
         <view class='userInfo'>
           <image src='{{item.userInfo.head}}' class='userHead'></image>
@@ -58,7 +58,7 @@
 <!--推荐-->
   <view class='recommend'>
     <view class='recommendTitle'>————  推荐  ————</view>
-    <view class='recommendList' wx:for="{{[0,1,2]}}" wx:for-index="i">
+    <view class='recommendList' wx:key="{{[0,1,2]}}" wx:for-index="i">
       <view class='recommendListLeft'>
         <image class='listFood' src='/images/盖饭.jpeg' mode='widthFix'></image>
         <view class='listFoodName'>{{recommend[i].name}}</view>
