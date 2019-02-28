@@ -2,18 +2,15 @@ const app = getApp();
 
 Page({
   data: {
-    goods: {},
+    goods: [],
     goodsList: [],
     cart: {},
-    showCartDetail: false
+    showCartDetail: false,
   },
 
   onLoad: function (e) {
-    /*var My_goods = app.globalData.foodList;
-    var My_goodsList = app.globalData.foodClass;*/
-
     this.setData({
-      goods: app.globalData.foodList.data,
+      goods: app.globalData.foodList,//从服务器读到的存在foodList
       goodsList: app.globalData.foodClass,
       cart: {
         count: 0,
@@ -22,23 +19,20 @@ Page({
       }
     })
     
-    /*var shopId = e.id;
-    for (var i = 0; i < app.globalData.shops.length; i++) {
-      if (app.globalData.shops[i].id == shopId) {
-        this.setData({
-          shop: app.globalData.shops[i]
-        });
-        break;
-      }
-    }*/
   },
 
   onShow: function () {//默认热销
-    console.log(app.globalData.foodList);
-    console.log(app.globalData.foodClass);
+    console.log(this.data.goods);
+    console.log(this.data.goodsList);
     this.setData({
       classifySeleted: this.data.goodsList[0].id
     });
+  },
+
+  tapDetail: function (e) {
+    wx.navigateTo({
+      url: '../details/details?title=0',
+    })
   },
 
   tapAddCart: function (e) {
@@ -177,6 +171,29 @@ Page({
     }, function (res) {
       console.log(res)
     });*/
+  },
+
+  onPullDownRefresh: function () {
+    wx.showNavigationBarLoading()
+    wx.request({
+      url: 'http://canteen.beihangsoft.cn/getMenu',
+      success: function (res) {
+        console.log("success");
+        var app = getApp();
+        app.globalData.foodList = res.data;
+        console.log(app.globalData.foodList)
+        //app.globalData.isLoad = true;
+      },
+      fail: function () {
+        console.log("fail");
+      }
+    });
+    this.onLoad()
+    setTimeout(function () {
+      // complete
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.stopPullDownRefresh() //停止下拉刷新
+    }, 500);
   }
 
 })

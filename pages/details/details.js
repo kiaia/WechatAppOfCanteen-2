@@ -12,16 +12,23 @@ Page({
   },
 
   onLoad: function (options) {
-    
-    // var id = options.title;
-    var id = 1;
-
+    /*if (typeof(options.title) != "undefined") {
+      id = options.title;
+    }*/
+    var id = options.title;
     var foods = app.globalData.foodList;
-    console.log(foods);
-    var details = foods.data[id - 1];
-    console.log(details);
 
-    var comments = [
+    this.setData ({
+      id: id,
+      details: foods[id],
+      comments: this.getComments(),
+      recommend: this.getRecommend(foods)
+    });
+
+  },
+
+  getComments: function() {
+    return [
       {
         id: 1.1,
         userInfo: {
@@ -41,44 +48,35 @@ Page({
         date: [2018, 4, 2]
       }
     ];
-    var recommend_id = [1, 1, 1, 1, 1, 1];
+  },
+
+  getRecommend: function(foods) {
+    // TODO: 用随机数生成推荐列表
+    var recommend_id = [0, 0, 0, 0, 0, 0];
     var recommend = [];
     for (var i = 0; i < recommend_id.length; ++i) {
       recommend.push(foods[recommend_id[i]]);
     }
+    return recommend;
+  },
 
-    this.setData ({
-      id: id,
-      details: details,
-      comments: comments,
-      recommend: recommend
+  navigatorToDetail: function(e) {
+    var id = e.currentTarget.id;
+    console.log(id)
+    var url = "../details/details?title=" + id;
+    console.log(url);
+    wx.redirectTo({
+      url: url,
+      success: () => {
+        console.log("success");
+      },
+      fail: () => {
+        console.log("fail");
+      }
     });
   },
 
-/*加载页面时请求服务器加载数据并更新页面*/
-  onShow: function () {
-
-  },
-
-/*隐藏y页面时将数据发回服务器*/
-  onHide: function () {
-
-  },
-
-  onUnload: function () {
-
-  },
-
-/*上拉刷新页面 下拉加载更多推荐菜单*/
-  onPullDownRefresh: function () {
-
-  },
-
-  onReachBottom: function () {
-
-  },
-
-/*抽屉动画 关闭时动画太快*/
+  /*抽屉动画 关闭时动画太快*/
   powerDrawer: function (e) {
     var currentStatu = e.currentTarget.dataset.statu;
     this.util(currentStatu)

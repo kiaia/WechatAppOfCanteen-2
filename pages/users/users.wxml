@@ -8,7 +8,7 @@
   </view>
 </view>
 <view class="second">
-  <button type="default" size="default" class="items1">
+  <button type="default" size="default" class="items1" bindtap='printUserInfo'>
   <image class='card' src='/images/message.png'></image>
   <view class="schoolCard">
   我的信息

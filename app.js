@@ -2,11 +2,12 @@
 App({
   onLaunch: function () {
     wx.request({
-      url: 'http://scse1606.cn',
+      url: 'http://canteen.beihangsoft.cn/getMenu',
       success: function (res) {
         console.log("success");
         var app = getApp();
         app.globalData.foodList = res.data;
+        console.log(app.globalData.foodList)
         //app.globalData.isLoad = true;
       },
       fail: function () {
@@ -50,5 +51,5 @@ App({
         goods: [0]
       }
     ]
-  }
+  },
 })
