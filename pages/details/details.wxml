@@ -58,19 +58,25 @@
 <!--推荐-->
   <view class='recommend'>
     <view class='recommendTitle'>————  推荐  ————</view>
+<<<<<<< HEAD
+    <view class='recommendList' wx:for="{{[0,2,4]}}" wx:for-index="i">
+      <view class='recommendListLeft' id="{{recommend[i].id}}" bindtap="navigatorToDetail">
+        <image class='listFood' src='{{recommend[i].pic}}' mode='widthFix'></image>
+=======
     <view class='recommendList' wx:key="{{[0,1,2]}}" wx:for-index="i">
       <view class='recommendListLeft'>
         <image class='listFood' src='/images/盖饭.jpeg' mode='widthFix'></image>
+>>>>>>> ebc2206cedc37574a30c83b3a3dcdb8b5a74be1c
         <view class='listFoodName'>{{recommend[i].name}}</view>
         <view class='listFoodPrice'>¥{{recommend[i].price}}</view>
         <view class='listFoodSales'>周销{{recommend[i].sold}}笔</view>
       </view>
 
-      <view class='recommendListRight'>
-        <image class='listFood' src='/images/盖饭.jpeg' mode='widthFix'></image>
+      <view class='recommendListRight' id="{{recommend[i].id}}" bindtap="navigatorToDetail">
+        <image class='listFood' src='{{recommend[i].pic}}' mode='widthFix'></image>
         <view class='listFoodName'>{{recommend[i+1].name}}</view>
         <view class='listFoodPrice'>¥{{recommend[i+1].price}}</view>
-        <view class='listFoodSales'>周销{{recommend[i].sold}}笔</view>
+        <view class='listFoodSales'>周销{{recommend[i+1].sold}}笔</view>
       </view>
 
     </view>

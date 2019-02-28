@@ -63,5 +63,6 @@
         "sold": 102,
         "price": 5
     }
-  }
+  },
+  "enablePullDownRefresh": true
 }

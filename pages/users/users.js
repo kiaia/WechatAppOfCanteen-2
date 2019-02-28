@@ -4,6 +4,7 @@ Page({
   data: {
     motto: 'Hello',
     userInfo: {},
+    userInfo2: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     pageBackgroundColor1: 'white',
@@ -15,9 +16,10 @@ Page({
   },
   //事件处理函数
   onLoad: function () {
-    if (app.globalData.userInfo) {
+    /*if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
+        userInfo2: app.globalData.encryptedData,
         hasUserInfo: true
       })
     } else if (this.data.canIUse) {
@@ -26,21 +28,23 @@ Page({
       app.userInfoReadyCallback = res => {
         this.setData({
           userInfo: res.userInfo,
+          userInfo2: res.encryptedData,
           hasUserInfo: true
         })
       }
-    } else {
+    } else {*/
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
           app.globalData.userInfo = res.userInfo
           this.setData({
             userInfo: res.userInfo,
+            userInfo2: res.encryptedData,
             hasUserInfo: true
           })
         }
       })
-    }
+    //}
   },//这里先暴力解决一下点按变色问题 回头再重构
   jumpToHealthy: function(e){
     wx.navigateTo({
@@ -63,12 +67,30 @@ Page({
     })
   },
   //
+  decode: function () {
+    var WXBizDataCrypt = require('./WXBizDataCrypt')
+
+    var appId = 'wx4f4bc4dec97d474b'
+    var sessionKey = 'tiihtNczf5v6AKRyjwEUhQ=='
+    var encryptedData = userInfo2
+    var iv = 'r7BXXKkLb8qrSNn05n0qiA=='
+
+    var pc = new WXBizDataCrypt(appId, sessionKey)
+
+    var data = pc.decryptData(encryptedData, iv)
+
+    console.log('解密后 data: ', data)
+  },
+  //
   getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
+      userInfo2: e.detail.encryptedData,
       hasUserInfo: true
     })
-  }
+    console.log(e.detail.userInfo)
+    //this.decode()
+  },
 })
