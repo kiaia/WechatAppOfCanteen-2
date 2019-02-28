@@ -22,8 +22,7 @@
               <text class="textstate" style='font-size: 70%;color:#cccccc;margin-bottom:10rpx;'>下单时间：{{ordertime}}</text>
                <text class="textstate" style='font-size: 80%;color:#ef3434;'>金额：16元</text>
             </view>
-          </view>
-         
+          </view> 
         </view>
       </view>
     </scroll-view>
