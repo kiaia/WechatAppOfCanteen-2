@@ -18,7 +18,19 @@ Page({
         list: {}
       }
     })
+<<<<<<< HEAD
     
+=======
+    /*var shopId = e.id;
+    for (var i = 0; i < app.globalData.shops.length; i++) {
+      if (app.globalData.shops[i].id == shopId) {
+        this.setData({
+          shop: app.globalData.shops[i]
+        });
+        break;
+      }
+    }*/
+>>>>>>> ebc2206cedc37574a30c83b3a3dcdb8b5a74be1c
   },
 
   onShow: function () {//默认热销
