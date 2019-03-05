@@ -17,12 +17,6 @@ Page({
     }*/
     var id = options.title;
     var foods = app.globalData.foodList;
-<<<<<<< HEAD
-=======
-    console.log(foods);
-    var details = foods[id - 1];
-    console.log(details);
->>>>>>> ebc2206cedc37574a30c83b3a3dcdb8b5a74be1c
 
     this.setData ({
       id: id,
