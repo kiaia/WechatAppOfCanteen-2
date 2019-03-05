@@ -2,11 +2,7 @@
 App({
   onLaunch: function () {
     wx.request({
-<<<<<<< HEAD
       url: 'http://canteen.beihangsoft.cn/getMenu',
-=======
-      url: 'http://canteen.beihangsoft.cn',
->>>>>>> ebc2206cedc37574a30c83b3a3dcdb8b5a74be1c
       success: function (res) {
         console.log("success");
         var app = getApp();
