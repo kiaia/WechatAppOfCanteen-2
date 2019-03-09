@@ -4,7 +4,7 @@ App({
     wx.request({
       url: 'http://canteen.beihangsoft.cn/getMenu',
       success: function (res) {
-        console.log("success");
+        console.log("success-menu");
         var app = getApp();
         app.globalData.foodList = res.data;
         console.log(app.globalData.foodList)
@@ -14,10 +14,40 @@ App({
         console.log("fail");
       }
     });
+    wx.login({
+      success: function (res) {
+        wx.request({
+          url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx4ea0486f80c8e2d7&secret=3c5ad94f57a5b3cd210c06221945f794&js_code=' + res.code + '&grant_type=authorization_code',
+          success: function (e) {
+            console.log("success-getopenid");
+            //app.globalData.isLoad = true;
+            var app = getApp();
+            app.globalData.openid = e.data.openid;
+            console.log(app.globalData.openid)
+          },
+        })
+      }
+    });
+    wx.request({
+      url: 'http://canteen.beihangsoft.cn/getOrder',
+      success: function (res) {
+        console.log("success-order");
+        var app = getApp();
+        app.globalData.allorderlist = res.data;
+        console.log(app.globalData.allorderlist)
+        //app.globalData.isLoad = true;
+      },
+      fail: function () {
+        console.log("fail");
+      }
+    });
   },
   globalData: {
     //isLoad: false,
+    openid : '',
     shops:[],
+    allorderlist:[],
+    orderlist:[],
     foodList: [],
     foodClass: [
       {

@@ -83,14 +83,11 @@ Page({
   },
   //
   getUserInfo: function (e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       userInfo2: e.detail.encryptedData,
       hasUserInfo: true
     })
-    console.log(e.detail.userInfo)
-    //this.decode()
   },
 })

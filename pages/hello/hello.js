@@ -7,7 +7,8 @@ Page({
     motto: 'Hello',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    openid : ''
   },
   //事件处理函数
   onLoad: function () {
@@ -47,7 +48,6 @@ Page({
     })
   },
   changePage: function(e){
-    console.log("fuck")
     wx.switchTab({
       url: '../users/users',
     })
