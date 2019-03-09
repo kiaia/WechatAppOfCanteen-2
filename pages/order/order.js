@@ -1,10 +1,14 @@
+const app = getApp();
+
 Page({
   data: {
-    toView: 'list1',
+    toView: 'list3',
     scrollTop: 0,
     maginleft: '10%',
-    inthisview: '未完成',
-    allorderlist: [{
+    inthisview: 3,
+    allorderlist:[],
+    foodlist:[],
+    /*allorderlist: [{
         img : '/images/446105925964471455.jpg',
         id: 0,
         ordername: '西红柿炒番茄',
@@ -47,36 +51,33 @@ Page({
         state: "已完成",
       },
 
-    ],
-    orderlist: [{
-      img : '/images/446105925964471455.jpg',
-      id: 0,
-      ordername: '西红柿炒番茄',
-      ordertime: '5月19日 23:59',
-      state: "未完成",
-    }, {
-      img : '/images/446105925964471455.jpg',
-      id: 1,
-      ordername: '番茄',
-      ordertime: '5月6日 4:59',
-      state: "未完成",
-    }, {
-      img : '/images/446105925964471455.jpg',
-      id: 4,
-      ordername: '西红番茄',
-      ordertime: '2月21日 23:59',
-      state: "未完成",
-    }, ]
+    ],*/
+    orderlist: []
+  },
+  onLoad: function (e) {
+    this.setData({
+      allorderlist: app.globalData.allorderlist,
+      //orderlist: app.globalData.allorderlist,
+      foodlist : app.globalData.foodList
+    })
+    var newaray = new Array();
+    var list = app.globalData.allorderlist
+    for (var key in list) {
+      if (list[key].state == 1) newaray.push(list[key]);
+    }
+    this.setData({
+      orderlist: newaray
+    })
   },
   btn1: function() {
     console.log("change to no complete!");
     var newaray = new Array();
     var list = this.data.allorderlist;
     for (var key in list){
-      if (list[key].state == '未完成') newaray.push(list[key]);
+      if (list[key].state == 1) newaray.push(list[key]);
     }
     this.setData({
-      inthisview: '未完成',
+      inthisview: 1,
       maginleft: '10%',
       orderlist: newaray,
     })
@@ -87,11 +88,11 @@ Page({
     var list = this.data.allorderlist;
     for( var key in list)
     {
-      if (list[key].state == '未评论') newaray.push(list[key]);
+      if (list[key].state == 2) newaray.push(list[key]);
     }
     this.setData({
       maginleft: '44%',
-      inthisview: '未评论',
+      inthisview: 2,
       orderlist:newaray,
     })
   },
@@ -100,10 +101,10 @@ Page({
     var newaray = new Array();
     var list = this.data.allorderlist;
     for (var key in list) {
-      if (list[key].state == '已完成') newaray.push(list[key]);
+      newaray.push(list[key]);
     }
     this.setData({
-      inthisview: '已完成',
+      inthisview: 3,
       maginleft: '76%',
       orderlist: newaray,
     })
