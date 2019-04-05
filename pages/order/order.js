@@ -1,4 +1,4 @@
-const app = getApp();
+ const app = getApp();
 
 Page({
   data: {
@@ -11,7 +11,7 @@ Page({
     orderlist: []
   },
 
-  onLoad: function (e) {
+  onLoad: function(e) {
     this.setData({
       allorderlist: app.globalData.allorderlist,
       foodlist : app.globalData.foodList
@@ -25,6 +25,10 @@ Page({
     this.setData({
       orderlist: newarray
     })
+  },
+
+  onShow: function(e) {
+    
   },
 
   btn1: function() {

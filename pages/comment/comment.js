@@ -38,7 +38,7 @@ Page({
       //       1. 用户登录才能进入系统
       //       2. 执行判断，如果未登录showToast需要先登录
       var userHead = app.globalData.userInfo.avatarUrl;
-
+      var that = this;
       wx.request({
         url: 'http://canteen.beihangsoft.cn/sendComment',
         data: {
@@ -49,10 +49,28 @@ Page({
         },
         method: 'POST',
         success: (res) => {
-          console.log(res);
+          var code = res.statusCode;
+          if (code == 200) {
+            wx.showToast({
+              title: '评论成功',
+              icon: 'none',
+              duration: 1000
+            });
+            that.backToOrder();
+          } else {
+            wx.showToast({
+              title: '服务器连接超时，请稍后再试',
+              icon: 'none',
+              duration: 1500
+            });
+          }
         },
         fail: (res) => console.log("fail"),
       })
     }
   },
+
+  backToOrder: function() {
+    console.log("backToOrder");
+  }
 })
