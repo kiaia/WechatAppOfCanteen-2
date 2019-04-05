@@ -118,4 +118,15 @@ Page({
   scroll: function(e) {
     //console.log(e)
   },
+  jumpToCommit: function (e) {
+    var id = e.currentTarget.id;
+    var img = e.currentTarget.dataset.img;
+    var orderName = e.currentTarget.dataset.ordername;
+    var orderTime = e.currentTarget.dataset.ordertime;
+    var url = '../comment/comment?id=' + id + "&img=" + img + "&orderName=" + orderName + "&orderTime=" + orderTime;
+    console.log(url);
+    wx.navigateTo({
+      url: url,
+    })
+  }
 })

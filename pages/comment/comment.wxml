@@ -1,0 +1,23 @@
+<!--users/Feedback/Feedback.wxml-->
+<view>
+  <view class="food">
+    <view class="imgContainer">
+      <image src="{{img}}" class="itemImg" mode="scaleToFill"></image>
+    </view>
+    <view class="details">
+      <text>{{orderName}}</text>
+      <text>下单时间: {{orderTime}}</text>
+    </view>
+  </view>
+  
+  <view>
+    <form bindsubmit="formSubmit">
+      <view class="comment_wrap">
+        <view class="comment">
+          <textarea name="opinion" value="{{contact}}" auto-height placeholder-class="placeholder" placeholder="一起来分享你的点评吧(*^▽^*)" />
+        </view>
+      </view>
+      <button formType="submit" type="primary" hover-class="none" loading="{{loading}}">提交</button>
+    </form>
+  </view>
+</view>

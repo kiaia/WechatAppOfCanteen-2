@@ -8,6 +8,18 @@ App({
         var app = getApp();
         app.globalData.foodList = res.data;
         console.log(app.globalData.foodList)
+        for(var i=0;i<res.data.length;i++){
+          var key = res.data[i];
+          if(key.sold > 500){
+            app.globalData.foodClass[0].goods.push(key.id)
+          }
+          for (var j = 0; j < app.globalData.foodClass.length;j++){
+            var fc = app.globalData.foodClass[j];
+            if(fc.id == key.type){
+              fc.goods.push(key.id) 
+            }
+          }
+        }
         //app.globalData.isLoad = true;
       },
       fail: function () {
@@ -53,27 +65,22 @@ App({
       {
         id: 'hot',
         classifyName: '热销',
-        goods: [0, 1, 2, 3, 4, 5]
+        goods: []
       },
       {
-        id: 'new',
-        classifyName: '新品',
-        goods: [0, 1, 2]
-      },
-      {
-        id: 'tsgf',
+        id: 'gf',
         classifyName: '特色盖饭',
-        goods: [0, 1, 2, 3]
+        goods: []
       },
       {
-        id: 'gggz',
-        classifyName: '干锅锅仔',
-        goods: [1, 2, 3, 4]
+        id: 'gg',
+        classifyName: '干锅',
+        goods: []
       },
       {
-        id: 'tbf',
-        classifyName: '铁板饭',
-        goods: [1, 4, 5]
+        id: 'jz',
+        classifyName: '饺子',
+        goods: []
       },
       {
         id: 'favorite',

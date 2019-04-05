@@ -1,0 +1,77 @@
+page{
+  background-color: #efefef;
+}
+ 
+.food {
+  background-color: #fff;
+  margin-top: 10rpx;
+  height: 250rpx;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+.comment_wrap{
+  margin-top: 10rpx;
+  background-color: #fff;
+}
+
+.comment{
+  width: 94%;
+  margin: 0 auto
+}
+
+textarea{
+  min-height: 400rpx;
+  padding: 10rpx 0;
+  width: 100%;
+}
+
+input{
+  margin-top: 30rpx;
+  height: 100rpx;
+  padding-left: 20rpx;
+  background-color: #fff;
+}
+
+button{
+  width: 24%;
+  height: 70rpx;
+  margin-top: 20rpx;
+  margin-left: 72%;
+  background-color: #353331;
+  color: #fff;
+  line-height: 70rpx;
+}
+
+.placeholder{
+  color: #999999;
+  font-size: 12pt;
+}
+
+.itemImg {
+  width:200rpx; 
+  height: 200rpx;
+  display: flex;
+  justify-content:flex-start;
+  align-items: centert;
+  flex-direction: column;
+}
+
+.details {
+  display: flex;
+  justify-content:flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 40rpx;
+}
+
+.imgContainer {
+  margin-left: 30rpx;
+}
+
+text {
+  font-size: 12pt;
+  color: #999999
+}
