@@ -101,18 +101,27 @@ page {
   align-items: center;
   flex-direction: row;
 }
-.ordermoditems1{
+
+.orderItemImg {
   display: flex;
   justify-content:flex-start;
   align-items: centert;
   flex-direction: column;
 }
-.ordermoditems2{
+
+.orderItemDetail {
   display: flex;
   justify-content:flex-start;
   align-items: flex-start;
   flex-direction: column;
+  margin-left: 30rpx;
 }
+
+.price {
+  font-size: 80%;
+  color:#ef3434;
+}
+
 .textin{
   color:#040008;
 }
