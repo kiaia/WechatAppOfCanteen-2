@@ -73,8 +73,10 @@ page{
 
 .second{
   height: 85px;
-  margin-top: 15px;
+  margin-top: 23px;
   margin-bottom: 10px;
+  font-size: 20px;
+  font-family: "Microsoft Yahei";
 }
 
 .third{
