@@ -21,14 +21,14 @@
       <view></view>
     </view>
     <view class='userInfo'>
-      <image src='{{comments[0].userInfo.head}}' class='userHead'></image>
-      <view class='userName'>{{comments[0].userInfo.userName}}</view>
+      <image src='{{comments[0].comment_user_head}}' class='userHead'></image>
+      <view class='userName'>{{comments[0].comment_user_name}}</view>
     </view>
-    <view class='commentDate'>{{comments[0].date[0]}}-{{comments[0].date[1]}}-{{comments[0].date[2]}}</view>
+    <view class='commentDate'>{{comments[0].comment_date}}</view>
 <!--    
     <image class='thumbUp' src='/images/Like.png'></image>
 -->
-    <view class='commentContent'>{{comments[0].comment}}</view>
+    <view class='commentContent'>{{comments[0].comment_include}}</view>
 <!--缺少点赞-->
   </view>
 
@@ -37,14 +37,14 @@
   <view animation='{{animationData}}' class='drawerBox' wx:if='{{showModalStatus}}'>
     <view class='latestComment'>最新</view>
     <view class='hottestComment'>最热</view>
-    <view class='commentBox' wx:key='{{comments}}'>
+    <view class='commentBox' wx:for='{{comments}}'>
       <view class='commentCell'>
         <view class='userInfo'>
-          <image src='{{item.userInfo.head}}' class='userHead'></image>
-          <view class='userName'>{{item.userInfo.userName}}</view>
+          <image src='{{item.comment_user_head}}' class='userHead'></image>
+          <view class='userName'>{{item.comment_user_name}}</view>
         </view>
-        <view class='commentData'>{{item.date[0]}}-{{item.date[1]}}-{{item.date[2]}}</view>
-        <view class='commentContent'>{{item.comment}}</view>
+        <view class='commentData'>{{item.comment_date}}</view>
+        <view class='commentContent'>{{item.comment_include}}</view>
       </view>
     </view>
   </view>

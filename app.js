@@ -1,6 +1,12 @@
 //app.js
 App({
   onLaunch: function () {
+    this.getMenu();
+    this.login();
+    this.getOrder();
+  },
+
+  getMenu: function() {
     wx.request({
       url: 'http://canteen.beihangsoft.cn/getMenu',
       success: function (res) {
@@ -8,24 +14,26 @@ App({
         var app = getApp();
         app.globalData.foodList = res.data;
         console.log(app.globalData.foodList)
-        for(var i=0;i<res.data.length;i++){
+        for (var i = 0; i < res.data.length; i++) {
           var key = res.data[i];
-          if(key.sold > 500){
+          if (key.sold > 500) {
             app.globalData.foodClass[0].goods.push(key.id)
           }
-          for (var j = 0; j < app.globalData.foodClass.length;j++){
+          for (var j = 0; j < app.globalData.foodClass.length; j++) {
             var fc = app.globalData.foodClass[j];
-            if(fc.id == key.type){
-              fc.goods.push(key.id) 
+            if (fc.id == key.type) {
+              fc.goods.push(key.id)
             }
           }
         }
-        //app.globalData.isLoad = true;
       },
       fail: function () {
         console.log("fail");
       }
     });
+  },
+
+  login: function() {
     wx.login({
       success: function (res) {
         wx.request({
@@ -39,23 +47,26 @@ App({
         })
       }
     });
+  },
+
+  getOrder: function() {
     wx.request({
       url: 'http://canteen.beihangsoft.cn/getOrder',
       success: function (res) {
         console.log("success-order");
         var app = getApp();
-        app.globalData.allorderlist = res.data;
+        app.globalData.allOrderList = res.data;
       },
       fail: function () {
         console.log("fail");
       }
     });
   },
+
   globalData: {
-    //isLoad: false,
     openid : '',
     shops:[],
-    allorderlist:[],
+    allOrderList:[],
     orderlist:[],
     foodList: [],
     foodClass: [
