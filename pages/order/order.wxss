@@ -116,3 +116,16 @@ page {
 .textin{
   color:#040008;
 }
+
+.commitButton {
+  border: solid red 2rpx;
+  border-radius: 25rpx;
+  margin-top: 8rpx;
+  margin-left: 330rpx;
+  height: 45rpx;
+  width: 150rpx;
+  font-size: 28rpx;
+  color: red;
+  text-align: center;
+  line-height: 45rpx;
+}
