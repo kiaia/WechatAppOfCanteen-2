@@ -12,9 +12,6 @@ Page({
   },
 
   onLoad: function (options) {
-    /*if (typeof(options.title) != "undefined") {
-      id = options.title;
-    }*/
     var id = options.title;
     var foods = app.globalData.foodList;
 

@@ -32,7 +32,6 @@ App({
           url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx4ea0486f80c8e2d7&secret=3c5ad94f57a5b3cd210c06221945f794&js_code=' + res.code + '&grant_type=authorization_code',
           success: function (e) {
             console.log("success-getopenid");
-            //app.globalData.isLoad = true;
             var app = getApp();
             app.globalData.openid = e.data.openid;
             console.log(app.globalData.openid)
@@ -46,8 +45,6 @@ App({
         console.log("success-order");
         var app = getApp();
         app.globalData.allorderlist = res.data;
-        console.log(app.globalData.allorderlist)
-        //app.globalData.isLoad = true;
       },
       fail: function () {
         console.log("fail");
