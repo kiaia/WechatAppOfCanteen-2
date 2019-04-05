@@ -30,8 +30,9 @@ Page({
   },
 
   tapDetail: function (e) {
+    console.log(e);
     wx.navigateTo({
-      url: '../details/details?title=0',
+      url: '../details/details?title=1',
     })
   },
 

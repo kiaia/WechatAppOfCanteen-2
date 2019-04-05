@@ -5,73 +5,74 @@ Page({
     toView: 'list3',
     scrollTop: 0,
     maginleft: '10%',
-    inthisview: 3,
-    allorderlist:[],
-    foodlist:[],
+    status: 3,                // 页面所在的位置 1 -> incomplet  2-> incommented  3 -> complete
+    allOrderList:[],          // 所有订单
+    foodList:[],
     orderlist: []
   },
 
   onLoad: function(e) {
     this.setData({
-      allorderlist: app.globalData.allorderlist,
-      foodlist : app.globalData.foodList
-    })
-    var newarray = new Array();
-    var list = app.globalData.allorderlist
-    for (var key in list) {
-      if (list[key].state == 1) 
-        newarray.push(list[key]);
-    }
-    this.setData({
-      orderlist: newarray
-    })
+      foodList: app.globalData.foodList,
+    });
   },
 
   onShow: function(e) {
-    
+    this.setData({
+      allOrderList: app.globalData.allOrderList
+    });
+    this.setStatus(3);
+  },
+
+  setStatus: function(status) {
+    switch (status) {
+      case 1: this.btn1();
+      case 2: this.btn2();
+      case 3: this.btn3();
+    }
   },
 
   btn1: function() {
     console.log("change to no complete!");
-    var newarray = new Array();
-    var list = this.data.allorderlist;
+    var newArray = new Array();
+    var list = this.data.allOrderList;
     for (var key in list){
       if (list[key].state == 1) 
-        newarray.push(list[key]);
+        newArray.push(list[key]);
     }
     this.setData({
-      inthisview: 1,
+      status: 1,
       maginleft: '10%',
-      orderlist: newarray,
+      orderlist: newArray,
     })
   },
 
   btn2: function() {
     console.log("change to no commit");
-    var newarray = new Array();
-    var list = this.data.allorderlist;
+    var newArray = new Array();
+    var list = this.data.allOrderList;
     for( var key in list) {
       if (list[key].state == 2) 
-        newarray.push(list[key]);
+        newArray.push(list[key]);
     }
     this.setData({
       maginleft: '44%',
-      inthisview: 2,
-      orderlist: newarray,
+      status: 2,
+      orderlist: newArray,
     })
   },
 
   btn3: function() {
     console.log("change to complete!");
-    var newarray = new Array();
-    var list = this.data.allorderlist;
+    var newArray = new Array();
+    var list = this.data.allOrderList;
     for (var key in list) {
-      newarray.push(list[key]);
+      newArray.push(list[key]);
     }
     this.setData({
-      inthisview: 3,
+      status: 3,
       maginleft: '76%',
-      orderlist: newarray,
+      orderlist: newArray,
     })
   },
 
@@ -88,12 +89,11 @@ Page({
   },
 
   jumpToCommit: function (e) {
-    var id = e.currentTarget.id;
+    var recipeId = e.currentTarget.dataset.recipeid;
     var img = e.currentTarget.dataset.img;
     var orderName = e.currentTarget.dataset.ordername;
     var orderTime = e.currentTarget.dataset.ordertime;
-    var url = '../comment/comment?id=' + id + "&img=" + img + "&orderName=" + orderName + "&orderTime=" + orderTime;
-    console.log(id);
+    var url = '../comment/comment?recipeId=' + recipeId + "&img=" + img + "&orderName=" + orderName + "&orderTime=" + orderTime;
     wx.navigateTo({
       url: url,
     })

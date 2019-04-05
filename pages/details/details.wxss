@@ -161,7 +161,6 @@ scroll-view {
 
 .commentBox {
   padding: 20rpx 40rpx;
-  height: 750rpx;
   overflow-y: scroll;
 }
 

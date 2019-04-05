@@ -2,7 +2,7 @@ const app = getApp();
 
 Page({
   data: {
-    id: 0,
+    recipeId: 0,
     img: "",
     orderTime: "",
     orderName: ""
@@ -11,7 +11,7 @@ Page({
   onLoad: function(options) {
     var img = "../.." + options.img;
     this.setData({
-      id: options.id,
+      recipeId: options.recipeId,
       img: img,
       orderTime: options.orderTime,
       orderName: options.orderName
@@ -38,14 +38,17 @@ Page({
       //       1. 用户登录才能进入系统
       //       2. 执行判断，如果未登录showToast需要先登录
       var userHead = app.globalData.userInfo.avatarUrl;
+      var nickName = app.globalData.userInfo.nickName;
       var that = this;
+
       wx.request({
         url: 'http://canteen.beihangsoft.cn/sendComment',
         data: {
           'comment_include': comment,
           'comment_user_head': userHead,
           'comment_user_id': app.globalData.openid,
-          'recipe_id': this.data.id
+          'comment_user_name': nickName,
+          'recipe_id': that.data.recipeId
         },
         method: 'POST',
         success: (res) => {
@@ -54,9 +57,14 @@ Page({
             wx.showToast({
               title: '评论成功',
               icon: 'none',
-              duration: 1000
+              duration: 700
             });
-            that.backToOrder();
+            app.getOrder();
+            setTimeout(() => {
+              wx.switchTab({
+                url: '../order/order',
+              });
+            }, 700);
           } else {
             wx.showToast({
               title: '服务器连接超时，请稍后再试',
@@ -68,9 +76,5 @@ Page({
         fail: (res) => console.log("fail"),
       })
     }
-  },
-
-  backToOrder: function() {
-    console.log("backToOrder");
   }
 })

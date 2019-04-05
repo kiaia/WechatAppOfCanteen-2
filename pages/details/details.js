@@ -14,37 +14,45 @@ Page({
   onLoad: function (options) {
     var id = options.title;
     var foods = app.globalData.foodList;
-
     this.setData ({
       id: id,
-      details: foods[id],
-      comments: this.getComments(),
+      details: foods[id], 
       recommend: this.getRecommend(foods)
     });
 
+    setTimeout(() => {
+      this.getComments();
+      setTimeout(() => {
+        console.log("Comments:")
+        console.log(this.data.comments);
+        setTimeout(() => {
+        }, 300);
+      }, 300);
+    }, 50);
+  },
+
+  onShow: function(){
+    this.getComments();
   },
 
   getComments: function() {
-    return [
-      {
-        id: 1.1,
-        userInfo: {
-          head: "../../images/head.jpeg",
-          userName: "SocialMan"
-        },
-        comment: "红红火火恍恍惚惚红红火火恍恍惚惚红红火火恍恍惚惚",
-        date: [2018, 4, 1]
+    var that = this;
+    wx.request({
+      url: 'http://canteen.beihangsoft.cn/getComment',
+      data: {
+        'recipe_id': that.data.id,
       },
-      {
-        id: 1.2,
-        userInfo: {
-          head: "../../images/head.jpeg",
-          userName: "SocialMan"
-        },
-        comment: "test",
-        date: [2018, 4, 2]
+      method: "POST",
+      success: (res) => {
+        console.log("success");
+        that.setData({
+          comments: res.data,
+        });
+      },
+      fail: (res) => {
+        console.log("fail");
       }
-    ];
+    });
   },
 
   getRecommend: function(foods) {
