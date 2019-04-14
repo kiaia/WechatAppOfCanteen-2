@@ -1,5 +1,3 @@
-# HYMNB!LMKNB!CZRNB!THYNB!LNNB!LWNB!
-
 # WechatAppOfCanteen
 
 ***
