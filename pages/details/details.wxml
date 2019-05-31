@@ -1,0 +1,78 @@
+<!-- /pages/details/details.wxml -->
+<scroll-view class='base' scroll-y='{{enableScrollY}}'>
+<!--底部加入点菜-->
+<!--简介-->
+  <view class='introduction'>
+    <image class='food' src="{{details.pic}}"></image>
+    <view class='price'>¥{{details.price}}</view>
+    <view class='name'>{{details.name}}</view>
+    <view class='introBottom'>
+      <view class='sales'>周销{{details.sold}}笔</view>
+      <view class='location'>{{details.locale}}</view>
+<!--缺少评分的详情，即星星数量-->
+    </view>
+  </view>
+
+<!--评论-->
+  <view class='comment'>
+    <view class='commentTop'>
+      <view class='commentSize'>评价({{comments.length}})</view>
+      <view class='allComment' bindtap='powerDrawer' data-statu='open'>全部评论</view>
+      <view></view>
+    </view>
+    <view class='userInfo'>
+      <image src='{{comments[0].comment_user_head}}' class='userHead'></image>
+      <view class='userName'>{{comments[0].comment_user_name}}</view>
+    </view>
+    <view class='commentDate'>{{comments[0].comment_date}}</view>
+<!--    
+    <image class='thumbUp' src='/images/Like.png'></image>
+-->
+    <view class='commentContent'>{{comments[0].comment_include}}</view>
+<!--缺少点赞-->
+  </view>
+
+<!--全部评论抽屉菜单-->
+  <view class='drawerScreen' bindtap='powerDrawer' data-statu='close' wx:if='{{showModalStatus}}'></view>
+  <view animation='{{animationData}}' class='drawerBox' wx:if='{{showModalStatus}}'>
+    <view class='latestComment'>最新</view>
+    <view class='hottestComment'>最热</view>
+    <view class='commentBox' wx:for='{{comments}}'>
+      <view class='commentCell'>
+        <view class='userInfo'>
+          <image src='{{item.comment_user_head}}' class='userHead'></image>
+          <view class='userName'>{{item.comment_user_name}}</view>
+        </view>
+        <view class='commentData'>{{item.comment_date}}</view>
+        <view class='commentContent'>{{item.comment_include}}</view>
+      </view>
+    </view>
+  </view>
+
+<!--营养列表-->
+  <view class='nutitionList'>
+    <view class='nutitionTitle'>营养详情</view>
+    <view class='nutition'>{{details.nutrition.caloris}}大卡  {{details.nutrition.protein}}克蛋白质  {{details.nutrition.carbohydrate}}克碳水</view>
+  </view>
+
+<!--推荐-->
+  <view class='recommend'>
+    <view class='recommendTitle'>————  推荐  ————</view>
+    <view class='recommendList' wx:for="{{[0,2,4]}}" wx:for-index="i">
+      <view class='recommendListLeft' id="{{recommend[i].id}}" bindtap="navigatorToDetail">
+        <image class='listFood' src='{{recommend[i].pic}}' mode='widthFix'></image>
+        <view class='listFoodName'>{{recommend[i].name}}</view>
+        <view class='listFoodPrice'>¥{{recommend[i].price}}</view>
+        <view class='listFoodSales'>周销{{recommend[i].sold}}笔</view>
+      </view>
+
+      <view class='recommendListRight' id="{{recommend[i].id}}" bindtap="navigatorToDetail">
+        <image class='listFood' src='{{recommend[i].pic}}' mode='widthFix'></image>
+        <view class='listFoodName'>{{recommend[i+1].name}}</view>
+        <view class='listFoodPrice'>¥{{recommend[i+1].price}}</view>
+        <view class='listFoodSales'>周销{{recommend[i+1].sold}}笔</view>
+      </view>
+
+    </view>
+  </view>
+</scroll-view>

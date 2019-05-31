@@ -1,0 +1,36 @@
+<view style="width:100%;height:100%;">
+  <view class="top_botton">
+    <button id="botton_1" plain="true" bindtap="btn1" class='textin'>未完成</button>
+    <button id="botton_2" plain="true" bindtap="btn2" class='textin'>未评论</button>
+    <button id="botton_3" plain="true" bindtap="btn3" class='textin'>全部订单</button>
+  </view>
+
+  <view class="bottom_line" style="margin-left:{{maginleft}};"></view>
+
+  <view class="section">
+    <scroll-view class="scroll" scroll-with-animation="false" scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-left="100" scroll-top="{{scrollTop}}">
+
+      <view id="list" wx:for="{{orderlist}}" wx:key="id">
+        <view class="viewstate">
+          <text class="textstate textin" style='font-size: 80%;'>订单状态：{{item.state}}</text>
+        </view>
+        <view style="margin:20rpx;margin-color:#ebebeb;">
+          <view class="ordermod">
+            <view class='orderItemImg'>
+              <image style="width:200rpx; height: 200rpx;" mode="scaleToFill" src="{{foodList[item.recipeid].pic}}"></image>
+            </view>
+            <view class='orderItemDetail'>
+              <text class="textstate" style='font-size:80%;margin-bottom:20rpx;color:#040008'>{{item.recipename}}</text>
+              <text class="textstate" style='font-size: 70%;color:#cccccc'>订单时间：{{item.orderdate}}</text>
+              <text class="textstate" style='font-size: 70%;color:#cccccc;margin-bottom:10rpx;'>下单时间：{{item.orderdate}}</text>
+               <text class="price">金额：16元</text>
+               <block wx:if="{{status == 2}}">
+                <view class="commitButton" bindtap="jumpToCommit" data-recipeId="{{item.recipeid}}" data-img="{{foodList[item.recipeid].pic}}" data-orderName="{{item.recipename}}" data-orderTime="{{item.orderdate}}">评价晒单</view>
+               </block>
+            </view>
+          </view> 
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

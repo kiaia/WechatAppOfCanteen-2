@@ -1,0 +1,263 @@
+/* /pages/details/details.wxss */
+Page {
+  overflow-y: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+scroll-view {
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.base {
+  z-index: -1;
+  background-color: #f4f5f9;
+  width: 100%;
+  height: 100%;
+}
+
+.introduction {
+  background-color: white;
+}
+
+.food {
+  font-size: 120%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 20rpx;
+  border-bottom-style: solid;
+  border-bottom-width: 10rpx;
+  border-bottom-color: #f4f5f9;
+}
+
+.price {
+  font-size: 120%;
+  color: #ef3434;
+  margin-left: 60rpx;
+}
+
+.name {
+  font-size: 120%;
+  margin-left: 60rpx;
+  margin-top: 7rpx;
+  margin-bottom: 20rpx;
+}
+
+.introBottom {
+  display: flex;
+  flex-direction: row;
+}
+
+.sales {
+  font-size: 80%;
+  color: #ccc;
+  margin-left: 61rpx;
+}
+
+.location {
+  font-size: 80%;
+  color: #ccc;
+  margin-left: auto;
+  margin-right: 60rpx;
+  margin-bottom: 20px;
+}
+
+.comment {
+  background-color: white;
+  border-bottom-style: solid;
+  border-bottom-width: 10rpx;
+  border-bottom-color: #f4f5f9;
+}
+
+.commentTop {
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+  border-top-style: solid;
+  border-top-color: white;
+  border-top-width: 20rpx;
+}
+
+.commentSize {
+  font-size: 80%;
+  text-align: left;
+  float: left;
+  margin-left: 20rpx;
+  color: #38a9eb;
+}
+
+.allComment {
+  font-size: 80%;
+  color: #38a9eb;
+  text-align: right;
+  margin-left: 600rpx;
+  margin-right: 30rpx;
+}
+
+.userHead {
+  width: 65rpx;
+  height: 65rpx;
+  border-radius: 50rpx;
+  float: left;
+  align-self: middle;
+  margin-left: 20rpx;
+}
+
+.userName {
+  padding-left: 70rpx;
+  padding-top: 8rpx;
+  padding-bottom: 8rpx;
+  font-size: 80%;
+  margin-left: 40rpx;
+}
+
+.commentDate {
+  font-size: 70%;
+  margin-left: 110rpx;
+  margin-bottom: 20rpx;
+}
+
+/*.thumbUp {
+  height: 25rpx;
+  width: 25rpx;
+}*/
+
+.commentContent {
+  font-size: 80%;
+  margin-left: 110rpx;
+  margin-right: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.drawerScreen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+}
+
+.drawerBox {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background: #fff;
+}
+
+.commentBox {
+  padding: 20rpx 40rpx;
+  overflow-y: scroll;
+}
+
+.commentCell {
+  padding-left: 20rpx;
+  padding-top: 10rpx;
+  border-top-style: solid;
+  border-top-width: 10rpx;
+  border-top-color: #f4f5f9;
+  border-bottom-style: solid;
+  border-bottom-width: 10rpx;
+  border-bottom-color: #f4f5f9;
+}
+
+.latestComment {
+  float: left;
+  color: #38a9eb;
+  font-size: 80%;
+  margin-left: 40rpx;
+  margin-right: 20rpx;
+  margin-top: 40rpx;
+  margin-bottom: 20px;
+}
+
+.hottestComment {
+  color: #38a9eb;
+  font-size: 80%;
+  margin-left: 120rpx;
+  margin-top: 40rpx;
+  margin-bottom: 20px;
+}
+
+.nutitionList {
+  background-color: white;
+  border-top-style: solid;
+  border-top-width: 10rpx;
+  border-top-color: white;
+  border-bottom-style: solid;
+  border-bottom-width: 10rpx;
+  border-bottom-color: white;
+}
+
+.nutitionTitle {
+  font-size: 80%;
+  text-align: center;
+}
+
+.nutition {
+  font-size: 80%;
+  text-align: center;
+}
+
+.recommend {
+  border-top-color: #f4f5f9;
+  border-top-style: solid;
+  border-top-width: 10rpx;
+}
+.recommendTitle {
+  font-size: 80%;
+  text-align: center;
+  color: grey;
+}
+
+.listFood {
+  width: 360rpx;
+}
+
+.listFoodName {
+  font-size: 90%;
+  text-align: left;
+  margin-left: 20rpx;
+}
+
+.listFoodPrice {
+  font-size: 80%;
+  text-align: left;
+  margin-left: 20rpx;
+  float:left;
+}
+
+.listFoodSales {
+  font-size: 80%;
+  text-align: right;
+  margin-right: 10rpx;
+}
+
+.recommendListLeft {
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-left: 10rpx;
+  background-color: white;
+  float: left;
+}
+.recommendListRight {
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-right: 10rpx;
+  background-color: white;
+  float: right;
+}
